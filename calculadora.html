@@ -1,0 +1,117 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora</title>
+  <style>
+    body {
+      background-color: #0a0a0a;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      color: #fff;
+    }
+
+    .calculadora {
+      background-color: #1a1a1a;
+      border: 2px solid #6a0dad;
+      border-radius: 10px;
+      padding: 20px;
+      width: 300px;
+      box-shadow: 0 0 15px #6a0dad40;
+    }
+
+    .display {
+      background-color: #000;
+      color: #0f0;
+      font-size: 2rem;
+      padding: 10px;
+      text-align: right;
+      border-radius: 5px;
+      margin-bottom: 15px;
+      min-height: 50px;
+    }
+
+    .botoes {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    button {
+      padding: 15px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 5px;
+      background-color: #333;
+      color: #fff;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    button:hover {
+      background-color: #6a0dad;
+    }
+
+    .igual {
+      background-color: #b30000;
+      color: white;
+    }
+
+    .igual:hover {
+      background-color: #e60000;
+    }
+  </style>
+</head>
+<body>
+  <div class="calculadora">
+    <div class="display" id="display"></div>
+    <div class="botoes">
+      <button onclick="limpar()">C</button>
+      <button onclick="inserir('(')">(</button>
+      <button onclick="inserir(')')">)</button>
+      <button onclick="inserir('/')">/</button>
+      <button onclick="inserir('7')">7</button>
+      <button onclick="inserir('8')">8</button>
+      <button onclick="inserir('9')">9</button>
+      <button onclick="inserir('*')">*</button>
+      <button onclick="inserir('4')">4</button>
+      <button onclick="inserir('5')">5</button>
+      <button onclick="inserir('6')">6</button>
+      <button onclick="inserir('-')">-</button>
+      <button onclick="inserir('1')">1</button>
+      <button onclick="inserir('2')">2</button>
+      <button onclick="inserir('3')">3</button>
+      <button onclick="inserir('+')">+</button>
+      <button onclick="inserir('0')">0</button>
+      <button onclick="inserir('.')">.</button>
+      <button onclick="calcular()" class="igual">=</button>
+    </div>
+  </div>
+
+  <script>
+    const display = document.getElementById('display');
+
+    function inserir(valor) {
+      display.innerText += valor;
+    }
+
+    function limpar() {
+      display.innerText = '';
+    }
+
+    function calcular() {
+      try {
+        display.innerText = eval(display.innerText);
+      } catch {
+        display.innerText = 'Erro';
+      }
+    }
+  </script>
+</body>
+</html>

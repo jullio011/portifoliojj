@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jullio Cesar - Portfólio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="fontawesome/css/all.css">
+</head>
+
+<body>
+  <header class="navegacao">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="sobremim.html">Sobre mim</a></li>
+      <li><a href="formaçãoacademica.html">Formação</a></li>
+      <li><a href="portfolio.html">Portfólio</a></li>
+      <li><a href="contato.html">Contato</a></li>
+    </ul>
+  </header>
+
+  <section class="cabecalho">
+    <p id="digita-texto"></p>
+    <h1>Jullio Cesar</h1>
+    <p>Estudante de Análise e Desenvolvimento de Sistemas</p>
+    <div class="resumo">
+      Desenvolvedor web em construção, apaixonado por código limpo e café forte.
+      Sempre conectado, adoro transformar ideias em interfaces intuitivas e responsivas.
+      Atualmente focado em <span class="destaque">HTML</span>, <span class="destaque">CSS</span> e aprendendo <span
+        class="destaque">JavaScript</span>.
+      Sonho em criar experiências digitais rápidas, acessíveis e com aquele toque pessoal.
+    </div>
+  </section>
+
+  <footer class="navegacao">
+    <ul>
+      <li><a href="#"><i class="fab fa-github"></i></a></li>
+      <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+      <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+    </ul>
+  </footer>
+
+  <script>
+    const texto = "Olá, visitante! 👋🏼 Meu nome é";
+    const elemento = document.getElementById("digita-texto");
+    let index = 0;
+
+    function digitar() {
+      if (index < texto.length) {
+        elemento.innerHTML += texto.charAt(index);
+        index++;
+        setTimeout(digitar, 50);
+      }
+    }
+
+    digitar();
+  </script>
+</body>
+
+</html>
